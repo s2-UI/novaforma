@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets'
+
+import GalleryImage from '@/components/gallery-image.astro'
+
+import { X } from 'lucide-react'
+
+const galleryImages = [
+  { src: '/02.jpeg?height=400&width=600', alt: 'Proyecto de renovación de cocina' },
+  { src: '/03.jpeg?height=400&width=600', alt: 'Construcción de oficina moderna' },
+  { src: '/04.jpeg?height=400&width=600', alt: 'Remodelación de baño de lujo' },
+  { src: '/05.jpeg?height=400&width=600', alt: 'Proyecto de construcción residencial' },
+  { src: '/06.jpeg?height=400&width=600', alt: 'Diseño de interiores comercial' },
+  { src: '/07.jpeg?height=400&width=600', alt: 'Renovación de fachada histórica' },
+]
+---
+
+<section
+  id='galeria'
+  class='w-full py-12 md:py-24 lg:py-32'
+>
+  <div class='container mx-auto px-4 md:px-6'>
+    <h2 class='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-primary-950'>
+      Nuestra Galería de Proyectos
+    </h2>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+      {
+        galleryImages.map((image, index) => (
+          <GalleryImage
+            src={image.src}
+            alt={image.alt}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+{
+  /* <div
+  id='gallery-popup'
+  class='fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50'
+>
+  <div class='relative max-w-4xl max-h-full'>
+    <Image
+      src='/logo.png'
+      alt='Proyecto ampliado'
+      width={1200}
+      height={800}
+      class='max-w-full max-h-[90vh] object-contain'
+    />
+    <button class='absolute top-4 right-4 text-white hover:text-red-500 transition-colors'>
+      <X className='h-8 w-8' />
+      <span class='sr-only'>Cerrar</span>
+    </button>
+  </div>
+</div> */
+}
