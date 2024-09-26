@@ -11,7 +11,10 @@ const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang='en'>
+<html
+  lang='en'
+  class='scroll-smooth'
+>
   <head>
     <meta charset='UTF-8' />
     <meta
@@ -83,10 +86,10 @@ const { title } = Astro.props
           </nav>
           <div class='flex items-center gap-4 lg:flex-row-reverse'>
             <a
+              href='#contacto'
               class='bg-sky-600 text-sky-50 font-semibold p-4 cursor-pointer rounded-sm hover:bg-primary-700 hover:transition-all'
               >Obtener Presupuesto</a
             >
-            <Menu className='flex size-12 cursor-pointer text-primary-600 lg:hidden hover:text-primary-700' />
           </div>
         </div>
       </header>
